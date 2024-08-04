@@ -1,66 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyBookList</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .container {
-            max-width: 800px;
-            margin-top: 30px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>MyBookList</h1>
-        <div class="form-group">
-            <input type="text" id="title" class="form-control mb-2" placeholder="Title">
-            <input type="text" id="author" class="form-control mb-2" placeholder="Author">
-            <input type="text" id="isbn" class="form-control mb-2" placeholder="ISBN#">
-            <button id="submit" class="btn btn-primary">Submit</button>
-        </div>
-        <table class="table table-striped mt-5">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>ISBN#</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody id="book-list"></tbody>
-        </table>
+  <head>
+    <script src="script.js " defer></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Better Instagram</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">Arrange Images by drag and drop</h1>
+  <div class="flex" id="parent">
+    <div droppable = "true"  draggable="true" class="image" id="div1">
+      <img droppable = "true"  draggable="true" id='drag1'>Image 1</img>
     </div>
 
-    <script>
-        document.getElementById('submit').addEventListener('click', function() {
-            const title = document.getElementById('title').value;
-            const author = document.getElementById('author').value;
-            const isbn = document.getElementById('isbn').value;
+    <div droppable = "true"  draggable="true" class="image" id="div2">
+      <img droppable = "true"  draggable="true" id='drag2'>Image 2</img>
+    </div>
 
-            if (title && author && isbn) {
-                const bookList = document.getElementById('book-list');
-                const row = bookList.insertRow();
-                row.innerHTML = `
-                    <td>${title}</td>
-                    <td>${author}</td>
-                    <td>${isbn}</td>
-                    <td><button class="btn btn-danger btn-sm delete">X</button></td>
-                `;
+    <div droppable = "true"  draggable="true" class="image" id="div3">
+      <img droppable = "true"  draggable="true" id='drag3'>Image 3</img>
+    </div>
 
-                document.getElementById('title').value = '';
-                document.getElementById('author').value = '';
-                document.getElementById('isbn').value = '';
-            }
-        });
+    <div droppable = "true"  draggable="true" class="image" id="div4">
+      <img droppable = "true"  draggable="true" id='drag4'>Image 4</img>
+    </div>
 
-        document.getElementById('book-list').addEventListener('click', function(e) {
-            if (e.target.classList.contains('delete')) {
-                e.target.closest('tr').remove();
-            }
-        });
-    </script>
-</body>
+    <div droppable = "true"  draggable="true" class="image" id="div5">
+      <img droppable = "true"  draggable="true" id='drag5'>Image 5</img>
+    </div>
+
+    <div droppable = "true"  draggable="true" class="image" id="div6">
+      <img droppable = "true"  draggable="true" id='drag6'>Image 6</img>
+    </div>
+  </body>
 </html>
